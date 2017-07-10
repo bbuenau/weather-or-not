@@ -5,11 +5,21 @@ import laksjflksjdf from './Conditions.css';
 class Conditions extends Component {
   render() {
 
-    const text = this.props.current;
+    const data = this.props.data;
+
+    let icon = "";
+    if (data.icon === 'cloudy') {
+      icon = "☁️";
+    } else if (data.icon === 'partly-cloudy-day') {
+      icon = "⛅️";
+    } else if (data.icon === 'clear-day') {
+      icon = "😎";
+    }
 
     return (
       <div className="GreenText">
-          {text}
+          
+          {icon + ' ' + data.summary}
       </div>
     );
   }

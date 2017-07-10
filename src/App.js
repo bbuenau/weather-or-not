@@ -45,16 +45,20 @@ class App extends Component {
 
   render() {
 
-    const currentConditions = "It's hot!";
-
-    let icon = null;
+    let conditions = [];
     if(this.state.weather !== null) {
-      icon = this.state.weather.currently.icon;
+      const data = this.state.weather.daily.data;
+      // conditions = this.state.weather.daily.data.map(day => {
+      // });
+
+      for (let i = 0; i < data.length; i++) {
+        conditions.push(<Conditions data={data[i]} />);
+      }
     }
 
     return (
       <div className="App">
-        {icon}
+        {conditions}
       </div>
     );
   }
