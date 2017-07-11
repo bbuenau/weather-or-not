@@ -1,3 +1,4 @@
+Hello world
 Simple app to demo some React concepts
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
